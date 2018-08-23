@@ -65,7 +65,7 @@ const checkToken = jwt({
 })
 
 // insert a new recipe
-app.post('/', (req, res) => {
+app.post('/', checkToken, (req, res) => {
   parseInt(req.body.title, 10).then(
     recipes.push(req.body)
   )
