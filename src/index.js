@@ -52,9 +52,9 @@ app.get('/:id', (req, res) => {
 
 // insert a new recipe
 app.post('/', (req, res) => {
-  parseInt(req.body.title, 10)
+  parseInt(req.body.title, 10).then(
     recipes.push(req.body)
-
+)
   res.status(200).send()
 })
 
